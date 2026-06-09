@@ -67,28 +67,68 @@ a:hover {
 }
 
 nav {
+    position: fixed;
     background-color: var(--bg-panel);
     border: 1px solid var(--border-color);
-    border-radius: 6px;
-    padding: 12px 20px;
-    margin-top: 30px;
+    top: 0;
+    left: 0;
+    bottom: 32px;
+    max-width:250px;
+    z-index: 90;
+    transition: transform 0.2s ease;
+    display:block;
 }
 
-.nav-principale {
+nav ul {list-style-type: none;}
+
+.btn-nav {
+  border: 0;
+  background: none; 
+  font-size: 0.45em;
+  font-family: var(--font-mono);
+  font-weight: bolder;
+  color: var(--accent-color);
+  cursor: pointer;  
+}
+
+.btn-nav:hover {
+  color: var(--accent-hover);
+}
+
+.nav-main {
     font-family: var(--font-mono);
     font-size: 0.9rem;
     font-weight: bold;
 }
 
-.nav-principale a {
+.nav-main a {
     color: var(--text-main);
     border-bottom: none;
 }
 
-.nav-principale a:hover {
+.nav-main a:hover {
     color: var(--accent-color);
 }
 
+.panel-section {
+    display: none;
+    font-size: smaller;
+}
+.panel-section.active {
+    display: block;
+    background-color: var(--border-color);
+}
+
+.blog-title{
+    color: var(--text-main);
+    font-family: var(--font-serif);
+}
+
+.blog-subtitle{
+    font-size:x-small;
+    color: var(--text-second);
+    font-family: var(--font-mono);
+}
 
 /*mots de conlang*/
 code, pre, [lang^="art-x-"] {
@@ -117,9 +157,9 @@ blockquote {
 }
 
 hr {
-    border: 0;
+    border: 1;
     border-top: 1px solid var(--border-color);
-    margin: 40px 0;
+    margin: 20px 0;
 }
 
 .footer {

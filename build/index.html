@@ -8,36 +8,39 @@
     <meta name="description" content="Le savoir ça se partage ! Blog d'un p'tit bout d'pomme fan de linguistique, de fantasy, d'écriture, de poésie, d'informatique et de sciences. J'aime bien tunnel les gens sur des sujets très spécifiques, mais encore faut-il que ça les intéresses ! Et toi, tu veux savoir ?">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="./style.css">
+    <script src="./main.js" defer></script>
 </head>
 <body>
 
-    <header>
+<aside id="sidebar">
     <nav aria-label="Navigation principale">
-        <ul class="navbar" style="list-style: none; display: flex; gap: 20px; padding: 0;">
-            
+        <div style="padding: 0px 15px 0px 15px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p class="blog-tittle">🍏 KrankerApfel</p>
+                <button class="btn-nav"><<</button>
+            </div>
+            <p class="blog-subtitle">J'aime bien tunnel les gens sur des sujets très spécifiques, 
+            mais encore faut-il que ça les intéresse !
+            Et toi, tu veux savoir ?</p>
+        </div>
+        <hr/>
+        
+        <ul class="nav-main">
             <li style="position: relative;">
                 <a href="#linguistique">Linguistique</a>                
-                <ul style="list-style: none; padding: 10px; background: #f4f4f4; border: 1px solid #ccc;">
+                <ul class="panel-section">
                     <li style="position: relative;">
                         <a href="#langues-construites">Langues construites</a>
-                        <ul style="list-style: none; padding-left: 15px;">
+                        <ul  class="panel-group">
                             <li><a href="#generalites">Généralités</a></li>
-                            <li><a href="#Nibelin">Nibelin</a></li>
+                            <li><a href="#conlangs">Mes conlangs</a></li>
                         </ul>
                     </li>
                     <li style="position: relative;">
-                        <a href="#apprentissage">Apprentissage des langues</a>
-                        
-                        <ul style="list-style: none; padding-left: 15px;">
-                            <li><a href="#hongrois">Hongrois</a></li>
-                            <li><a href="#allemand">Allemand</a></li>
-                        </ul>
-                    </li>
-                     <li style="position: relative;">
-                        <a href="#synthese-vocale">Synthèse vocale</a>
-                        <ul style="list-style: none; padding-left: 15px;">
-                            <li><a href="#synthese-vocale-le-chant">Synthèse vocale pour le chant</a></li>
-                            <li><a href="#synthese-vocale-pour-la-lecture">Synthèse vocale pour la lecture</a></li>
+                        <a href="#apprendre-une-langue">Apprendre...</a>
+                        <ul  class="panel-group">
+                            <li><a href="#hongrois">Le Hongrois</a></li>
+                            <li><a href="#allemand">L'Allemand</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -45,28 +48,38 @@
 
             <li>
                 <a href="#lecture-et-ecriture">Lecture et Écriture</a>
-                <ul style="list-style: none; padding: 10px; background: #f4f4f4; border: 1px solid #ccc;">
+                <ul class="panel-section">
                     <li style="position:relative;">
                         <ul style="list-style: none; padding-left: 15px;">
                             <li><a href="#roman">Roman</a></li>
                             <li><a href="#poesie">Poésie</a></li>
-                            <li><a href="#beta-lecture">Besoin de Bêta-Lectures ?</a></li>
+                            <li><a href="#bibliotheque">Ma Bibliothèque</a></li>
+                            <li><a href="#beta-lecture">Mes Services</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
 
-            <li><a href="#la-vie-en-moins-nulle">La vie en moins nulle</a></li>
-            
+            <li>
+                <a href="#la-vie-en-moins-nulle">La vie en moins nulle</a>
+                <ul class="panel-section">
+                    <li style="position:relative;">
+                        <ul style="list-style: none; padding-left: 15px;">
+                            <li><a href="#pensees-en-vrac">Pensées en vrac</a></li>
+                            <li><a href="#tdah">TDAH entraide</a></li>
+                            <li><a href="#joie">Joyeusetés</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </nav>
-</header>
+</aside>
 
     <main>
         <article>
             <h1>Blog en construction</h1>
             <p>Bientôt, des trucs et des machins que je trouve cools !</p>
-            <p>Plus tard encore, y aura une vraie mise en page mais pour l'instant, admirer cette ébauche brute et chaotique èwé</p>
         </article>
     </main>
 
@@ -76,11 +89,11 @@
     </span>
     
     <span class="version-tag">v06.2026</span>
+    <span class="version-tag">♡ Merci Club1 pour l'hébergement et la communauté ♡</span>
     
     <span class="stat-item ml-auto">0 articles</span>
     <span class="stat-item">0 visites</span>
     
 </footer>
-
 </body>
 </html>
