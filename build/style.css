@@ -1,0 +1,168 @@
+/* ==========================================================================
+T-MEEY CAPUCCINO THEME by KrankerApfel
+========================================================================== */
+
+:root {
+    --bg-main: #fbf7ee;        
+    --bg-panel: #f4edd9;        
+    --text-main: #3e332c;
+    --text-second: #7c6a5e;       
+    --accent-color: #b07d62;    
+    --accent-hover: #8d5b40;    
+    --border-color: #e6dcc6;    
+    
+    /* TODO typographie post-binaire collectif bye bye binary */
+    --font-serif: 'Georgia', 'Times New Roman', serif;
+    --font-mono: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.65;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+}
+
+main, header, footer {
+    width: 100%;
+    max-width: 680px; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    color: var(--text-main);
+    font-family: var(--font-serif);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 2em;
+    margin-bottom: 0.6em;
+}
+
+h1 { 
+    font-size: 2.2rem; 
+    border-bottom: 1px solid var(--border-color); 
+    padding-bottom: 12px; 
+}
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.25rem; }
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+    border-bottom-color: var(--accent-hover);
+}
+
+nav {
+    background-color: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 12px 20px;
+    margin-top: 30px;
+}
+
+.nav-principale {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.nav-principale a {
+    color: var(--text-main);
+    border-bottom: none;
+}
+
+.nav-principale a:hover {
+    color: var(--accent-color);
+}
+
+
+/*mots de conlang*/
+code, pre, [lang^="art-x-"] {
+    font-family: var(--font-mono);
+    background-color: var(--bg-panel);
+    color: #5c674e; 
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+pre {
+    padding: 18px;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+    display: block;
+    line-height: 1.5;
+}
+
+blockquote {
+    margin: 24px 0;
+    padding-left: 18px;
+    border-left: 2px solid var(--accent-color);
+    color: var(--text-second);
+    font-style: italic;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 40px 0;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%; 
+    height: 32px;    
+    background-color: var(--bg-main);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    box-sizing: border-box;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    gap: 16px;
+    color: var(--text-muted);
+    z-index: 50;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.version-tag {
+    opacity: 0.7;
+    font-size: 10px;
+}
+
+/* Force les éléments suivants à se caler tout à droite */
+.ml-auto {
+    margin-left: auto;
+}
+
+.stat-item {
+    font-variant-numeric: tabular-nums; /* Évite que la barre bouge quand les chiffres changent */
+}
+
+
+
