@@ -44,6 +44,10 @@ main, header, footer {
     box-sizing: border-box;
 }
 
+main {
+    grid-column: 2;
+}
+
 h1, h2, h3 {
     color: var(--text-main);
     font-family: var(--font-serif);
@@ -77,9 +81,21 @@ a:hover {
 aside {
     background-color: var(--bg-panel); 
     border-right: 1px solid var(--border-color);
-    overflow: hidden; 
-    position: relative;
-    height: calc(100vh - 32px); 
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 32px;
+    width: 250px;
+    z-index: 40;
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body.sidebar-closed aside {
+    width: 30px;
+    overflow: hidden;
 }
 
 nav {
