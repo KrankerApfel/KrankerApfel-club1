@@ -438,7 +438,7 @@ body.sidebar-closed aside.conlang-infobox {
     width: max-content;
     min-width: 100%;
     margin: 0;
-    font-size: 0.78rem;
+    font-size: 0.58rem;
 }
 
 .conlang-matrix th {
@@ -464,8 +464,6 @@ body.sidebar-closed aside.conlang-infobox {
     margin: 24px 0;
     padding: 12px;
     box-sizing: border-box;
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-panel);
 }
 
 .conlang-vowel-chart h3 {
@@ -477,7 +475,7 @@ body.sidebar-closed aside.conlang-infobox {
     position: relative;
     width: 100%;
     aspect-ratio: 10 / 7;
-    background-color: #fff;
+    background-color: var(--bg-panel);
 }
 
 .vowel-chart-image-link,
@@ -498,8 +496,7 @@ body.sidebar-closed aside.conlang-infobox {
     height: 1.4em;
     font-size: 0.78rem;
     line-height: 1.4;
-    color: var(--text-main);
-    background-color: #fff;
+    color: var(--accent-color);
     white-space: nowrap;
 }
 
