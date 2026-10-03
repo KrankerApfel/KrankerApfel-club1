@@ -18,6 +18,20 @@ document.addEventListener('DOMContentLoaded', () => {
         link.href = new URL(href, siteRootUrl).href;
     });
 
+    const currentUrl = new URL(window.location.href);
+    const matchingLinks = [...document.querySelectorAll('#sidebar a[href]')]
+        .map((link) => ({ link, url: new URL(link.href) }))
+        .filter(({ url }) => url.pathname === currentUrl.pathname);
+    const activeLink = currentUrl.hash
+        ? matchingLinks.find(({ url }) => url.hash === currentUrl.hash)
+            || matchingLinks.find(({ url }) => !url.hash)
+        : matchingLinks.find(({ url }) => !url.hash);
+
+    if (activeLink) {
+        activeLink.link.classList.add('active-page');
+        activeLink.link.closest('.panel-section')?.classList.add('active');
+    }
+
     document.querySelectorAll('.nav-main > li > a').forEach((link) => {
         const panel = link.nextElementSibling;
         if (!panel || !panel.classList.contains('panel-section')) {

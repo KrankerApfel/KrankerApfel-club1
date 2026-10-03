@@ -10,6 +10,7 @@ T-MEEY CAPUCCINO THEME by KrankerApfel
     --accent-color: #b07d62;    
     --accent-hover: #8d5b40;    
     --border-color: #e6dcc6;    
+    --sidebar-number-indent: 6px;
     
     /* TODO typographie post-binaire collectif bye bye binary */
     --font-serif: 'Georgia', 'Times New Roman', serif;
@@ -161,12 +162,31 @@ body.sidebar-closed .blog-title-compact {
     display: inline;
 }
 
+body.sidebar-closed .sidebar-intro {
+    padding: 0;
+}
+
+body.sidebar-closed .sidebar-brand-row {
+    position: relative;
+    justify-content: center;
+    min-height: 27px;
+}
+
+body.sidebar-closed .blog-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
 body.sidebar-closed .btn-nav {
-    position: static;
-    flex: 0 0 20px;
+    position: absolute;
+    right: 2px;
+    top: 50%;
     width: 20px;
     text-align: center;
     padding: 0;
+    transform: translateY(-50%);
 }
 
 body.sidebar-closed .sidebar-divider {
@@ -180,6 +200,40 @@ body.sidebar-closed .blog-subtitle {
 
 body.sidebar-closed .nav-main > li > a .nav-label {
     display: none;
+}
+
+body.sidebar-closed .nav-main > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.sidebar-closed .nav-main > li > a .nav-icon {
+    margin-left: 0;
+}
+
+body.sidebar-closed .panel-section.active,
+body.sidebar-closed .panel-section.active ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body.sidebar-closed .panel-section.active a {
+    padding: 2px 0;
+    font-size: 0;
+    white-space: nowrap;
+}
+
+body.sidebar-closed .panel-section.active a::before {
+    content: attr(data-compact-number);
+    font-size: 0.7rem;
+    margin-left: var(--sidebar-number-indent);
+    margin-right: 0.25em;
+}
+
+body.sidebar-closed .panel-section.active .panel-group a {
+    padding-left: 12px;
 }
 
 
@@ -198,6 +252,22 @@ body.sidebar-closed .nav-main > li > a .nav-label {
 
 .nav-main a:hover {
     color: var(--accent-color);
+}
+
+.nav-main a.active-page {
+    color: var(--accent-hover);
+    font-weight: 900;
+}
+
+body.sidebar-closed .panel-section.active a.active-page::before {
+    background-color: var(--bg-main);
+    border-radius: 2px;
+    font-weight: 900;
+    padding: 0 2px;
+}
+
+.nav-icon {
+    margin-left: var(--sidebar-number-indent);
 }
 
 .panel-section {
