@@ -9,6 +9,44 @@ const SRC_DIR = path.join(__dirname, 'src');
 const BUILD_DIR = path.join(__dirname, 'build');
 const COMPONENTS_DIR = path.join(SRC_DIR, 'components');
 const TEMPLATE_PATH = path.join(SRC_DIR, 'template.html');
+const PHONEME_AUDIO_FILES = {
+    'p': 'Voiceless bilabial plosive.ogg',
+    'b': 'Voiced bilabial plosive.ogg',
+    't': 'Voiceless alveolar plosive.ogg',
+    'd': 'Voiced alveolar plosive.ogg',
+    'k': 'Voiceless velar plosive.ogg',
+    'g': 'Voiced velar plosive.ogg',
+    'ʡᵸ': 'Epiglottal stop.ogg',
+    'f': 'Voiceless labiodental fricative.ogg',
+    'v': 'Voiced labiodental fricative.ogg',
+    's': 'Voiceless alveolar sibilant.ogg',
+    'z': 'Voiced alveolar sibilant.ogg',
+    'ʁ': 'Voiced uvular fricative.ogg',
+    'h': 'Voiceless glottal fricative.ogg',
+    't͡s': 'Voiceless alveolar sibilant affricate.oga',
+    'd͡ʒ': 'Voiced palato-alveolar affricate.ogg',
+    'ʈ͡ʂ': 'Voiceless retroflex affricate.ogg',
+    'ɖ͡ʐ': 'Voiced retroflex affricate.ogg',
+    'l': 'Alveolar lateral approximant.ogg',
+    'j': 'Palatal approximant.ogg',
+    'w': 'Voiced labio-velar approximant.ogg',
+    'ɾ': 'Alveolar tap.ogg',
+    'm': 'Bilabial nasal.ogg',
+    'n': 'Alveolar nasal.ogg',
+    'i': 'Close front unrounded vowel.ogg',
+    'i:': 'Close front unrounded vowel.ogg',
+    'y': 'Close front rounded vowel.ogg',
+    'y:': 'Close front rounded vowel.ogg',
+    'u': 'Close back rounded vowel.ogg',
+    'e': 'Close-mid front unrounded vowel.ogg',
+    'o': 'Close-mid back rounded vowel.ogg',
+    'œ': 'Open-mid front rounded vowel.ogg',
+    'œ:': 'Open-mid front rounded vowel.ogg',
+    'æ': 'Near-open front unrounded vowel.ogg',
+    'a': 'Open front unrounded vowel.ogg',
+    'a:': 'Open front unrounded vowel.ogg',
+    'ã': 'Open back unrounded nasal vowel.ogg',
+};
 const STYLE_VERSION = crypto.createHash('sha256')
     .update(fs.readFileSync(path.join(SRC_DIR, 'css', 'style.css')))
     .digest('hex')
@@ -72,6 +110,7 @@ function fixAssetPaths(html, outputPath) {
     return html
         .replace(/href="\.\/css\/style\.css"/g, `href="${assetRoot}css/style.css?v=${STYLE_VERSION}"`)
         .replace(/src="\.\/js\/sidebar\.js"/g, `src="${assetRoot}js/sidebar.js?v=${SCRIPT_VERSION}"`)
+        .replace(/src="\.\/js\/phoneme-audio\.js"/g, `src="${assetRoot}js/phoneme-audio.js"`)
         .replace(/href="favicon\.png"/g, `href="${assetRoot}favicon.png"`);
 }
 
@@ -93,13 +132,38 @@ function escapeHtml(value) {
     })[character]);
 }
 
+function renderPhonemeLink(phoneme) {
+    const fileName = PHONEME_AUDIO_FILES[phoneme];
+    if (!fileName) {
+        throw new Error(`No Wikimedia Commons audio mapping exists for phoneme "${phoneme}".`);
+    }
+
+    const audioUrl = `https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(fileName)}`;
+    const filePageUrl = `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(fileName.replaceAll(' ', '_'))}`;
+    const approximation = phoneme === 'ʡᵸ'
+        ? ' Audio proche : occlusive épiglottale non aspirée.'
+        : phoneme === 'ã'
+            ? ' Audio proche : voyelle nasale postérieure ouverte.'
+            : '';
+
+    return `<a class="phoneme-audio" href="${escapeHtml(filePageUrl)}" data-phoneme-audio="${escapeHtml(audioUrl)}" aria-label="Écouter ${escapeHtml(phoneme)}.${approximation}" title="Écouter ${escapeHtml(phoneme)}${approximation}">${escapeHtml(phoneme)}</a>`;
+}
+
+function renderPhonemeList(value) {
+    return String(value ?? '')
+        .split(/\s*,\s*/)
+        .filter(Boolean)
+        .map(renderPhonemeLink)
+        .join(', ');
+}
+
 function renderConlangMatrix(template, matrix) {
     const headers = matrix.columns
         .map((column) => `<th scope="col">${escapeHtml(column)}</th>`)
         .join('');
     const rows = matrix.rows.map((row) => {
         const cells = row.cells
-            .map((cell) => `<td>${escapeHtml(cell)}</td>`)
+            .map((cell) => `<td>${renderPhonemeList(cell)}</td>`)
             .join('');
         return `<tr><th scope="row">${escapeHtml(row.label)}</th>${cells}</tr>`;
     }).join('');
@@ -113,7 +177,7 @@ function renderConlangMatrix(template, matrix) {
 
 function renderVowelChart(template, chart) {
     const points = chart.points.map((point) =>
-        `<span class="vowel-chart-point vowel-chart-point--${escapeHtml(point.anchor || 'middle')}" style="left:${escapeHtml(point.x)}%;top:${escapeHtml(point.y)}%">${escapeHtml(point.label)}</span>`
+        `<span class="vowel-chart-point vowel-chart-point--${escapeHtml(point.anchor || 'middle')}" style="left:${escapeHtml(point.x)}%;top:${escapeHtml(point.y)}%">${renderPhonemeList(point.label)}</span>`
     ).join('\n');
 
     return template

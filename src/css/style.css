@@ -496,7 +496,6 @@ body.sidebar-closed aside.conlang-infobox {
     height: 1.4em;
     font-size: 0.78rem;
     line-height: 1.4;
-    color: var(--accent-color);
     white-space: nowrap;
 }
 

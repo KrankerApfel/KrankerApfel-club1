@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/sidebar.js" defer></script>
+    <script src="./js/phoneme-audio.js" defer></script>
 </head>
 <body>
 
@@ -56,7 +57,7 @@
 <template id="conlang-vowel-chart-template">
     <section class="conlang-vowel-chart">
         <h3>{{chartTitle}}</h3>
-        <div class="conlang-vowel-chart-image" role="img" aria-label="{{chartDescription}}">
+        <div class="conlang-vowel-chart-image" role="group" aria-label="{{chartDescription}}">
             <a class="vowel-chart-image-link" href="https://commons.wikimedia.org/wiki/File:Blank_vowel_trapezoid.svg">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Blank_vowel_trapezoid.svg/330px-Blank_vowel_trapezoid.svg.png"
                      srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Blank_vowel_trapezoid.svg/960px-Blank_vowel_trapezoid.svg.png 2x"
