@@ -119,11 +119,13 @@ body.sidebar-closed .btn-nav {
     font-family: var(--font-mono);
     font-size: 0.9rem;
     font-weight: bold;
+    padding: 0;
 }
 
 .nav-main a {
     color: var(--text-main);
     border-bottom: none;
+    display: block;
 }
 
 .nav-main a:hover {
