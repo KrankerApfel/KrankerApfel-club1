@@ -217,13 +217,24 @@ function renderConlangTemplate(template, contentHtml, metadata) {
         throw new Error('The conlang Markdown page is missing its phonology table marker.');
     }
 
+    const romanizationTablesMatch = contentHtml.match(
+        /(<h4>Romanisation<\/h4>\s*<p>[\s\S]*?<\/p>\s*)<table>([\s\S]*?)<\/table>\s*<table>([\s\S]*?)<\/table>/i
+    );
+    if (!romanizationTablesMatch) {
+        throw new Error('The conlang Markdown page is missing its two romanization tables.');
+    }
+
+    const romanizationTables = `${romanizationTablesMatch[1]}<div class="conlang-romanization-tables"><table>${romanizationTablesMatch[2]}</table><table>${romanizationTablesMatch[3]}</table></div>`;
+
     return {
         template: template
             .replace(matrixTemplateMatch[0], '')
             .replace(vowelChartTemplateMatch[0], '')
             .split('{{conlangName}}').join(escapeHtml(metadata.name))
             .split('{{conlangInfoBox}}').join(infoRows),
-        content: contentHtml.replace('<!-- CONLANG_PHONOLOGY_TABLES -->', phonologyContent),
+        content: contentHtml
+            .replace('<!-- CONLANG_PHONOLOGY_TABLES -->', phonologyContent)
+            .replace(romanizationTablesMatch[0], romanizationTables),
     };
 }
 

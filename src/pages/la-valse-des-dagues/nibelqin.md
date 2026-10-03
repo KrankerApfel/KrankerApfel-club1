@@ -18,7 +18,7 @@ conlang:
 
   phonology:
     consonants:
-      title: "Inventaire consonantique"
+      title: "Consonnes"
       rowHeading: "Mode"
       columns: ["Bilabiale", "Labio-dentale", "Alvéolaire", "Post-alvéolaire", "Rétroflexe", "Palatale", "Labio-vélaire", "Vélaire", "Uvulaire", "Épiglottale", "Glottale"]
       rows:
@@ -93,14 +93,14 @@ Pour faciliter sa lecture et son écriture en ligne, il existe également une ve
 
 Les graphèmes suivants correspondent aux phonèmes de l'inventaire :
 
-| Graphèmes consonantiques | Phonèmes |
+| Graphèmes | Phonèmes |
 | --- | --- |
 | `P`, `B`, `D`, `T`, `K`, `G` | `/p/`, `/b/`, `/d/`, `/t/`, `/k/`, `/g/` |
 | `F`, `V`, `S`, `Z`, `H`, `R` | `/f/`, `/v/`, `/s/`, `/z/`, `/h/` et `/ʡᵸ/`, `/ʁ/` |
 | `M`,`N`, `L`, `J`, `W` | `/m/`, `/n/`, `/l/`, `/j/`, `/w/` |
 | `TS`, `DJ`, `TR`, `DR` | `/t͡s/`, `/d͡ʒ/`, `/ʈ͡ʂ/`, `/ɖ͡ʐ/` |
 
-| Graphèmes vocaliques | Phonèmes |
+| Graphèmes | Phonèmes |
 | --- | --- |
 | `A`, `E`, `I`, `O`, `U`, `Ü`, `OE` | `/a/`, `/e/`, `/i/`, `/o/`, `/u/`, `/y/`, `/œ/` |
 | `AN`, `AE` | `/ã/`, `/æ/` |
@@ -135,7 +135,9 @@ Le système repose sur des morphèmes de domaine déclinés à différents mode.
 L'élément causatif `ga` combiné aux déclinaisons du domaine directif `k-` permet d'exprimer la causalité en fonction de la nature de la cause. Les questions utilise sa forme agglutinée `gak-`, tandis que les déclaratives l'emploient en particule cadre `ga + objet de la cause + k-[cas]`.
 
 
-| Emploi | Causal passé | Téléologique | Causal explicatif | Causal étatif |
+|  | Causal passé | Téléologique | Causal explicatif | Causal étatif |
 | --- | --- | --- | --- | --- |
-| Interrogatif | `gakudo` : causé par quoi ? | `gakuda` : dans quel but ? | `gakudu` : par quel principe ? | `gakudae` : en raison de quel état ? |
-| Déclaratif | `ga ... kudo` : parce que… | `ga ... kuda` : afin de… | `ga ... kudu` : en vertu de… | `ga ... kudae` : par ou en raison de cet état… |
+| **Interrogatif** | **gakudo** « Causé par quoi ? » | **gakuda** « Dans quel but ? » | **gakudu** « Par quel principe ? » | **gakudae** « Causé par quel état ? » |
+| **Déclaratif** | **ga ... kudo** « Parce que... » | **ga ... kuda** « Afin de / Pour... » | **ga ... kudu** « En vertu de... » | **ga ... kudae** « Par / En raison de [état]... » |
+| **Exemple d'interrogative** | *Gakudo djeqelbaek'dim ne Dead-Gweltot ?* « Pourquoi Gweltot-La-Forte à une belle architecture ? » | *Gakuda neheba aru ?* « Dans quel but prépare-t-on le bébé ? » | *Gakudu pedzar keber Kadogan balija'kda ?* « Quelle vertu les poussent à éduquer l'enfant Cadogan ? » | *Gakudae baliandreba ?* « À cause de quel état pleure-t-iel ? » |
+| **Exemple de déclarative** | *Djeqelbaek'dim ne Dead-Gweltot ga baek'dimberin kudo nivaqin.* « La belle architecture de Gweltot-La-Forte est parce que nous sommes un peuple de bâtisseurs. » | *Ga onaqiel'kde kuda.* « Afin de quitter la maison. » | *Nubeja Dead-Gweltot megratz ga djeqelbaek'dim kudu.* « On suggère de visiter Gweltot-La-Forte en vertu de la belle architecture. » |  |

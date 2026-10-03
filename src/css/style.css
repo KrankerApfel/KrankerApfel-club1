@@ -337,6 +337,20 @@ article th {
     font-weight: 700;
 }
 
+.conlang-romanization-tables {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.conlang-romanization-tables table {
+    flex: 1 1 0;
+    width: 0;
+    min-width: 0;
+    margin: 1.25rem 0;
+    font-size: 0.78rem;
+}
+
 .conlang-main {
     max-width: none;
     margin: 0;
@@ -519,6 +533,15 @@ body.sidebar-closed aside.conlang-infobox {
 }
 
 @media (max-width: 760px) {
+    .conlang-romanization-tables {
+        flex-direction: column;
+    }
+
+    .conlang-romanization-tables table {
+        flex: none;
+        width: 100%;
+    }
+
     .conlang-page {
         padding: 20px 16px 48px;
     }
