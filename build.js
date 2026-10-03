@@ -111,6 +111,17 @@ function renderConlangMatrix(template, matrix) {
         .split('{{matrixRows}}').join(rows);
 }
 
+function renderVowelChart(template, chart) {
+    const points = chart.points.map((point) =>
+        `<span class="vowel-chart-point vowel-chart-point--${escapeHtml(point.anchor || 'middle')}" style="left:${escapeHtml(point.x)}%;top:${escapeHtml(point.y)}%">${escapeHtml(point.label)}</span>`
+    ).join('\n');
+
+    return template
+        .split('{{chartTitle}}').join(escapeHtml(chart.title))
+        .split('{{chartDescription}}').join(escapeHtml(chart.description))
+        .split('{{vowelChartPoints}}').join(points);
+}
+
 function renderConlangTemplate(template, contentHtml, metadata) {
     const matrixTemplateMatch = template.match(
         /<template id="conlang-matrix-template">([\s\S]*?)<\/template>/i
@@ -119,14 +130,24 @@ function renderConlangTemplate(template, contentHtml, metadata) {
     if (!matrixTemplateMatch) {
         throw new Error('The conlang template is missing its phonology matrix template.');
     }
+    const vowelChartTemplateMatch = template.match(
+        /<template id="conlang-vowel-chart-template">([\s\S]*?)<\/template>/i
+    );
+
+    if (!vowelChartTemplateMatch) {
+        throw new Error('The conlang template is missing its vowel chart template.');
+    }
 
     const matrixTemplate = matrixTemplateMatch[1];
     const infoRows = metadata.infobox.map(([label, value]) =>
         `<tr><th scope="row">${escapeHtml(label)}</th><td>${escapeHtml(value)}</td></tr>`
     ).join('');
-    const phonologyTables = [metadata.phonology.consonants, metadata.phonology.vowels]
-        .map((matrix) => renderConlangMatrix(matrixTemplate, matrix))
-        .join('\n');
+    const consonantTable = renderConlangMatrix(matrixTemplate, metadata.phonology.consonants);
+    const vowelChart = renderVowelChart(
+        vowelChartTemplateMatch[1],
+        metadata.phonology.vowels
+    );
+    const phonologyContent = `${consonantTable}\n${vowelChart}`;
 
     if (!contentHtml.includes('<!-- CONLANG_PHONOLOGY_TABLES -->')) {
         throw new Error('The conlang Markdown page is missing its phonology table marker.');
@@ -135,9 +156,10 @@ function renderConlangTemplate(template, contentHtml, metadata) {
     return {
         template: template
             .replace(matrixTemplateMatch[0], '')
+            .replace(vowelChartTemplateMatch[0], '')
             .split('{{conlangName}}').join(escapeHtml(metadata.name))
             .split('{{conlangInfoBox}}').join(infoRows),
-        content: contentHtml.replace('<!-- CONLANG_PHONOLOGY_TABLES -->', phonologyTables),
+        content: contentHtml.replace('<!-- CONLANG_PHONOLOGY_TABLES -->', phonologyContent),
     };
 }
 

@@ -37,20 +37,41 @@ conlang:
         - label: "Battue"
           cells: ["", "", "ɾ", "", "", "", "", "", "", "", ""]
     vowels:
-      title: "Inventaire vocalique"
-      rowHeading: "Ouverture"
-      columns: ["Antérieure non arrondie", "Antérieure arrondie", "Postérieure"]
-      rows:
-        - label: "Fermée"
-          cells: ["i, i:", "y, y:", "u"]
-        - label: "Mi-fermée"
-          cells: ["e", "", "o"]
-        - label: "Mi-ouverte"
-          cells: ["", "œ, œ:", ""]
-        - label: "Presque ouverte"
-          cells: ["æ", "", ""]
-        - label: "Ouverte"
-          cells: ["a, a:, ã", "", ""]
+      title: "Voyelles"
+      description: "Trapèze vocalique positionnant les voyelles selon l'antériorité et l'ouverture."
+      points:
+        - label: "i, i:"
+          x: 4
+          y: 1
+          anchor: start
+        - label: "y, y:"
+          x: 24
+          y: 1
+          anchor: start
+        - label: "u"
+          x: 83
+          y: 1
+          anchor: end
+        - label: "e"
+          x: 18
+          y: 29.6
+          anchor: start
+        - label: "o"
+          x: 69
+          y: 29.6
+          anchor: end
+        - label: "œ, œ:"
+          x: 25
+          y: 58.1
+          anchor: middle
+        - label: "æ"
+          x: 33
+          y: 72.4
+          anchor: start
+        - label: "a, a:, ã"
+          x: 44
+          y: 86.7
+          anchor: start
 ---
 
 # Nibel'qin

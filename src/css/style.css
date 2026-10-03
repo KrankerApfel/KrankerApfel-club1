@@ -441,6 +441,59 @@ body.sidebar-closed aside.conlang-infobox {
     text-align: left;
 }
 
+.conlang-vowel-chart {
+    width: 100%;
+    max-width: 300px;
+    margin: 24px 0 24px auto;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-panel);
+}
+
+.conlang-vowel-chart h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+}
+
+.conlang-vowel-chart-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 10 / 7;
+    background-color: #fff;
+}
+
+.vowel-chart-image-link,
+.vowel-chart-image-link img,
+.vowel-chart-points {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.vowel-chart-image-link img {
+    display: block;
+}
+
+.vowel-chart-point {
+    position: absolute;
+    height: 1.4em;
+    font-size: 120%;
+    line-height: 1.4;
+    color: var(--text-main);
+    background-color: #fff;
+    white-space: nowrap;
+}
+
+.vowel-chart-point--middle {
+    transform: translateX(-50%);
+}
+
+.vowel-chart-point--end {
+    transform: translateX(-100%);
+}
+
 @media (max-width: 760px) {
     .conlang-page {
         padding: 20px 16px 48px;

@@ -52,5 +52,21 @@
         </div>
     </section>
 </template>
+
+<template id="conlang-vowel-chart-template">
+    <section class="conlang-vowel-chart">
+        <h3>{{chartTitle}}</h3>
+        <div class="conlang-vowel-chart-image" role="img" aria-label="{{chartDescription}}">
+            <a class="vowel-chart-image-link" href="https://commons.wikimedia.org/wiki/File:Blank_vowel_trapezoid.svg">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Blank_vowel_trapezoid.svg/330px-Blank_vowel_trapezoid.svg.png"
+                     srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Blank_vowel_trapezoid.svg/960px-Blank_vowel_trapezoid.svg.png 2x"
+                     width="300" height="210" alt="" decoding="async" loading="lazy">
+            </a>
+            <div class="vowel-chart-points">
+                {{vowelChartPoints}}
+            </div>
+        </div>
+    </section>
+</template>
 </body>
 </html>
