@@ -147,7 +147,7 @@ function renderConlangTemplate(template, contentHtml, metadata) {
         vowelChartTemplateMatch[1],
         metadata.phonology.vowels
     );
-    const phonologyContent = `${consonantTable}\n${vowelChart}`;
+    const phonologyContent = `<div class="conlang-phonology-inventories">\n${consonantTable}\n${vowelChart}\n</div>`;
 
     if (!contentHtml.includes('<!-- CONLANG_PHONOLOGY_TABLES -->')) {
         throw new Error('The conlang Markdown page is missing its phonology table marker.');

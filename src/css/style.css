@@ -411,12 +411,20 @@ body.sidebar-closed aside.conlang-infobox {
     margin-top: 0.3em;
 }
 
+.conlang-phonology-inventories {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
 .conlang-matrix {
+    flex: 1 1 0;
+    min-width: 0;
     margin: 24px 0;
 }
 
 .conlang-matrix h3 {
-    margin-top: 0;
+    margin: 0 0 17px;
     font-size: 1.2rem;
 }
 
@@ -430,7 +438,7 @@ body.sidebar-closed aside.conlang-infobox {
     width: max-content;
     min-width: 100%;
     margin: 0;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
 }
 
 .conlang-matrix th {
@@ -439,12 +447,21 @@ body.sidebar-closed aside.conlang-infobox {
 
 .conlang-matrix th:first-child {
     text-align: left;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background-color: var(--bg-panel);
+}
+
+.conlang-matrix thead th:first-child {
+    z-index: 2;
 }
 
 .conlang-vowel-chart {
-    width: 100%;
+    flex: 0 0 300px;
+    width: 300px;
     max-width: 300px;
-    margin: 24px 0 24px auto;
+    margin: 24px 0;
     padding: 12px;
     box-sizing: border-box;
     border: 1px solid var(--border-color);
@@ -479,7 +496,7 @@ body.sidebar-closed aside.conlang-infobox {
 .vowel-chart-point {
     position: absolute;
     height: 1.4em;
-    font-size: 120%;
+    font-size: 0.78rem;
     line-height: 1.4;
     color: var(--text-main);
     background-color: #fff;
@@ -514,6 +531,20 @@ body.sidebar-closed aside.conlang-infobox {
     .conlang-article-content {
         grid-column: 1;
         grid-row: 2;
+    }
+
+    .conlang-phonology-inventories {
+        flex-direction: column;
+    }
+
+    .conlang-matrix,
+    .conlang-vowel-chart {
+        flex: none;
+        width: 100%;
+    }
+
+    .conlang-vowel-chart {
+        max-width: 300px;
     }
 }
 
