@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Langue construite - KrankerApfel</title>
+    <meta name="description" content="Fiche descriptive d'une langue construite de l'univers de La Valse des Dagues.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/sidebar.js" defer></script>
+</head>
+<body>
+
+{{sidebar}}
+
+<main class="conlang-main">
+    <article class="conlang-page">
+        <div class="conlang-page-layout">
+            <div class="conlang-article-content">
+                {{content}}
+            </div>
+            <aside class="conlang-infobox" aria-label="Fiche signalétique">
+                <h2>{{conlangName}}</h2>
+                <table>
+                    <tbody>
+                    {{conlangInfoBox}}
+                    </tbody>
+                </table>
+            </aside>
+        </div>
+    </article>
+</main>
+
+{{footer}}
+
+<template id="conlang-matrix-template">
+    <section class="conlang-matrix">
+        <h3>{{matrixTitle}}</h3>
+        <div class="conlang-matrix-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">{{rowHeading}}</th>
+                        {{columnHeadings}}
+                    </tr>
+                </thead>
+                <tbody>
+                    {{matrixRows}}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</template>
+</body>
+</html>

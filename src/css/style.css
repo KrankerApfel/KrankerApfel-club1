@@ -316,6 +316,154 @@ blockquote {
     font-style: italic;
 }
 
+article table {
+    display: block;
+    max-width: 100%;
+    margin: 1.25rem 0;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+article th,
+article td {
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+    vertical-align: top;
+}
+
+article th {
+    background-color: var(--bg-panel);
+    font-weight: 700;
+}
+
+.conlang-main {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+.conlang-page {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 24px 32px 56px;
+    box-sizing: border-box;
+}
+
+.conlang-page-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(190px, 240px);
+    align-items: start;
+    gap: 16px;
+}
+
+aside.conlang-infobox {
+    position: static;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    z-index: 1;
+    transition: none;
+    font-size: 0.78rem;
+    line-height: 1.4;
+}
+
+body.sidebar-closed aside.conlang-infobox {
+    width: auto;
+    overflow: visible;
+}
+
+.conlang-infobox h2 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+}
+
+.conlang-infobox table {
+    display: table;
+    width: 100%;
+    margin: 0;
+    font-size: 0.78rem;
+}
+
+.conlang-infobox th,
+.conlang-infobox td {
+    padding: 4px 6px;
+}
+
+.conlang-infobox th {
+    width: 38%;
+}
+
+.conlang-article-content {
+    min-width: 0;
+}
+
+.conlang-article-content > h1:first-child {
+    margin-top: 0.3em;
+}
+
+.conlang-matrix {
+    margin: 24px 0;
+}
+
+.conlang-matrix h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.conlang-matrix-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.conlang-matrix table {
+    display: table;
+    width: max-content;
+    min-width: 100%;
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.conlang-matrix th {
+    text-align: center;
+}
+
+.conlang-matrix th:first-child {
+    text-align: left;
+}
+
+@media (max-width: 760px) {
+    .conlang-page {
+        padding: 20px 16px 48px;
+    }
+
+    .conlang-page-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    aside.conlang-infobox {
+        grid-column: 1;
+        grid-row: 1;
+        position: static;
+        max-height: none;
+    }
+
+    .conlang-article-content {
+        grid-column: 1;
+        grid-row: 2;
+    }
+}
+
 hr {
     border: 0;
     border-top: 1px solid var(--border-color);
