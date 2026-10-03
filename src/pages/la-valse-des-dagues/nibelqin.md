@@ -67,15 +67,15 @@ conlang:
 
 ### Échantillon
 
-| Forme | Prononciation | Sens | Écriture indiquée |
-| --- | --- | --- | --- |
-| Niber kaleb'du ! | `/ni.bɛɾ ka.læb.du/` | Salutation respectueuse, littéralement « je te transmets respect » | Abjad Valoron |
+| Romanisation | Prononciation | Sens
+| --- | --- | --- | 
+| Niber kaleb'du ! | `/ni.bɛɾ ka.læb.du/` | Bonjour (lit. « je transmets respect ») 
 
-La langue se nomme elle-même Nibel'qin, prononcé `/ni.bɛl.kin/`.
+Le nibel'qin (`/ni.bɛl.kin/`) est une langue inventée en 2024 pour l'univers de mon jeu de rôle et de mon roman *La Valse Des Dagues*. 
 
 ### Diégèse
 
-Bien que peu parlée au sein de l'Archipel, le protectorat de Gweltot-La-Forte (Daed-Gweltot /daed gwel.to/), situé sur l'île d'Enok, en à fait sa langue officielle. Ce choix est une revendication identitaire qui est chers aux Gwelfortien·nes car leur langue est un point centrale de leurs valeurs puisqu'elle est construite de sorte à favoriser les intéractions respectueuses et bienveillantes. Elle possède aussi un rôle stratégique, car certains mécanismes magiques dépendent du sens des mots.
+Bien que peu parlée au sein de l'Archipel, le protectorat de Gweltot-La-Forte (Daed'Gweltot `/daed gwel.to/`), situé sur l'île d'Enok, en à fait sa langue officielle. Ce choix est une revendication identitaire qui est chers aux Gwelfortien·nes (Gwel'daed'qin `/gwel daed kin/`) car leur langue est un point centrale de leurs valeurs puisqu'elle est construite de sorte à favoriser les intéractions respectueuses et bienveillantes. Elle possède aussi un rôle stratégique, car certains mécanismes magiques dépendent du sens des mots.
 
 ### Phonologie
 
