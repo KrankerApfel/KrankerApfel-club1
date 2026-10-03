@@ -8,6 +8,8 @@ function getSiteRootUrl() {
     return new URL(siteRootPath, window.location.origin);
 }
 
+const sidebarStateKey = 'sidebar-closed';
+
 document.addEventListener('DOMContentLoaded', () => {
     const siteRootUrl = getSiteRootUrl();
 
@@ -35,14 +37,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const navButton = document.querySelector('.btn-nav');
+    const sidebarClosed = sessionStorage.getItem(sidebarStateKey) === 'true';
+
+    if (sidebarClosed) {
+        document.body.classList.add('sidebar-closed');
+        if (navButton) {
+            navButton.textContent = '>>';
+        }
+    }
+
     if (!navButton) {
         return;
     }
 
     navButton.addEventListener('click', () => {
-        document.body.classList.toggle('sidebar-closed');
-        navButton.textContent = document.body.classList.contains('sidebar-closed')
-            ? '>>'
-            : '<<';
+        const isClosed = document.body.classList.toggle('sidebar-closed');
+        sessionStorage.setItem(sidebarStateKey, String(isClosed));
+        navButton.textContent = isClosed ? '>>' : '<<';
     });
 });

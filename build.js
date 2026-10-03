@@ -13,6 +13,10 @@ const STYLE_VERSION = crypto.createHash('sha256')
     .update(fs.readFileSync(path.join(SRC_DIR, 'css', 'style.css')))
     .digest('hex')
     .slice(0, 8);
+const SCRIPT_VERSION = crypto.createHash('sha256')
+    .update(fs.readFileSync(path.join(SRC_DIR, 'js', 'sidebar.js')))
+    .digest('hex')
+    .slice(0, 8);
 
 async function cleanBuild() {
     console.log('Cleaning build directory...');
@@ -67,7 +71,7 @@ function fixAssetPaths(html, outputPath) {
 
     return html
         .replace(/href="\.\/css\/style\.css"/g, `href="${assetRoot}css/style.css?v=${STYLE_VERSION}"`)
-        .replace(/src="\.\/js\/sidebar\.js"/g, `src="${assetRoot}js/sidebar.js"`)
+        .replace(/src="\.\/js\/sidebar\.js"/g, `src="${assetRoot}js/sidebar.js?v=${SCRIPT_VERSION}"`)
         .replace(/href="favicon\.png"/g, `href="${assetRoot}favicon.png"`);
 }
 
