@@ -40,38 +40,27 @@ conlang:
       title: "Voyelles"
       description: "Trapèze vocalique positionnant les voyelles selon l'antériorité et l'ouverture."
       points:
-        - label: "i, i:"
-          x: 4
-          y: 1
-          anchor: start
-        - label: "y, y:"
-          x: 24
-          y: 1
-          anchor: start
+        - label: "i, y"
+          x: 10
+          y: 7.14
         - label: "u"
-          x: 83
-          y: 1
-          anchor: end
+          x: 90
+          y: 7.14
         - label: "e"
-          x: 18
-          y: 29.6
-          anchor: start
+          x: 23.33
+          y: 35.71
         - label: "o"
-          x: 69
-          y: 29.6
-          anchor: end
-        - label: "œ, œ:"
-          x: 25
-          y: 58.1
-          anchor: middle
+          x: 90
+          y: 35.71
+        - label: "œ"
+          x: 36.67
+          y: 64.29
         - label: "æ"
-          x: 33
-          y: 72.4
-          anchor: start
-        - label: "a, a:, ã"
-          x: 44
-          y: 86.7
-          anchor: start
+          x: 43.33
+          y: 78.57
+        - label: "a, ã"
+          x: 50
+          y: 92.86
 ---
 
 # Nibel'qin

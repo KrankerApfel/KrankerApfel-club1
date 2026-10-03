@@ -177,7 +177,7 @@ function renderConlangMatrix(template, matrix) {
 
 function renderVowelChart(template, chart) {
     const points = chart.points.map((point) =>
-        `<span class="vowel-chart-point vowel-chart-point--${escapeHtml(point.anchor || 'middle')}" style="left:${escapeHtml(point.x)}%;top:${escapeHtml(point.y)}%">${renderPhonemeList(point.label)}</span>`
+        `<span class="vowel-chart-point" style="left:${escapeHtml(point.x)}%;top:${escapeHtml(point.y)}%">${renderPhonemeList(point.label)}</span>`
     ).join('\n');
 
     return template
