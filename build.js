@@ -16,7 +16,7 @@ const PHONEME_AUDIO_FILES = {
     'd': 'Voiced alveolar plosive.ogg',
     'k': 'Voiceless velar plosive.ogg',
     'g': 'Voiced velar plosive.ogg',
-    'ʡᵸ': 'Epiglottal stop.ogg',
+    'ħ': 'Voiceless pharyngeal fricative.ogg',
     'f': 'Voiceless labiodental fricative.ogg',
     'v': 'Voiced labiodental fricative.ogg',
     's': 'Voiceless alveolar sibilant.ogg',

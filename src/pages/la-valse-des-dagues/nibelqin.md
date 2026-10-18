@@ -25,9 +25,9 @@ conlang:
         - label: "Nasale"
           cells: ["m", "", "n", "", "", "", "", "", "", "", ""]
         - label: "Occlusive"
-          cells: ["p", "b", "t", "d", "", "", "", "k", "g", "ʡᵸ", ""]
+          cells: ["p", "b", "t", "d", "", "", "", "k", "g", "", ""]
         - label: "Fricative"
-          cells: ["", "f", "v", "s", "z", "", "", "", "ʁ", "", "h"]
+          cells: ["", "f", "v", "s", "z", "", "", "", "ʁ", "ħ", "h"]
         - label: "Affriquée"
           cells: ["", "", "t͡s", "d͡ʒ", "ʈ͡ʂ, ɖ͡ʐ", "", "", "", "", "", ""]
         - label: "Approximante latérale"
